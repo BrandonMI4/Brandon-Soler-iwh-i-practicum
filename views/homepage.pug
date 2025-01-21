@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= title
+  body
+    h1 List of custom objects
+    a(href="/update-cobj") Add to this table
+    if records.length > 0
+      table(border="1")
+        thead
+          tr
+            th Name
+            th Bio
+            th Price
+        tbody
+          each record in records
+            tr
+              td= record.properties.name || 'N/A'
+              td= record.properties.bio || 'N/A'
+              td= record.properties.price || 'N/A'
+    else
+      p No custom objects found.
